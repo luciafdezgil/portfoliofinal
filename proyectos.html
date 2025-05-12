@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>proyectos | portfolio</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --rosa-claro: #ffe7ee;
+        --rosa-hover: #f9b7c4;
+        --gris: #333;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Open Sans", sans-serif;
+        background-color: #fff9f9;
+        color: var(--gris);
+      }
+
+      .menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: white;
+        border-bottom: 2px solid #ccc;
+        padding: 1rem;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+      }
+
+      .menu ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+        margin-left: -47px;
+      }
+
+      .menu a {
+        text-decoration: none;
+        color: var(--gris);
+        font-size: 1rem;
+        text-transform: lowercase;
+        transition: color 0.3s ease;
+      }
+
+      .menu a:hover {
+        color: var(--rosa-hover);
+      }
+
+      #proyectos {
+        margin-top: 12px;
+        padding: 2rem;
+        max-width: 1400px;
+        margin-inline: auto;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .proyecto {
+        background-color: var(--rosa-claro);
+        border-radius: 20px;
+        padding: 3rem;
+        margin-bottom: 4rem;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .proyecto:hover {
+        transform: translateY(-5px);
+      }
+
+      .titulo-proyecto {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .titulo-proyecto img {
+        width: 20%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+      }
+
+      .galeria {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        margin-bottom: 1rem;
+        scroll-snap-type: x mandatory;
+      }
+
+      .galeria img {
+        max-height: 300px;
+        border-radius: 12px;
+        object-fit: cover;
+        scroll-snap-align: center;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+      }
+
+      .galeria img:hover {
+        transform: scale(1.05);
+      }
+
+      .ver-mas {
+        display: inline-block;
+        background-color: white;
+        border: 2px solid var(--gris);
+        border-radius: 8px;
+        padding: 0.7rem 1.2rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .ver-mas:hover {
+        background-color: var(--gris);
+        color: white;
+      }
+
+      .info-oculta {
+        display: none;
+        margin-top: 1rem;
+        animation: fadeIn 0.5s ease forwards;
+        font-size: 1.1rem;
+      }
+
+      .info-oculta.visible {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+    <script>
+      function toggleInfo(id) {
+        const info = document.getElementById(id);
+        info.classList.toggle("visible");
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">inicio</a></li>
+        <li><a href="proyectos.html">proyectos</a></li>
+        <li><a href="contacto.html">contacto</a></li>
+        <li><a href="error404.html">sobre mí</a></li>
+      </ul>
+    </nav>
+
+    <section id="proyectos">
+      <h1>mis proyectos</h1>
+
+      <div class="proyecto">
+        <div class="titulo-proyecto">
+          <img src="assets/fotos/pinrreles.png" alt="Título Proyecto 1" />
+        </div>
+        <div class="galeria">
+          <img src="assets/fotos/pinrreles1.png" alt="Pinreles 1" />
+          <img src="assets/fotos/pinrreles2.png" alt="Pinreles 2" />
+          <img src="assets/fotos/pinrreles3.png" alt="Pinreles 3" />
+        </div>
+        <button class="ver-mas" onclick="toggleInfo('info1')">Ver más</button>
+        <div class="info-oculta" id="info1">
+          <p>
+            este proyecto se centra en el diseño de una web de calcetines que
+            combine comodidad, naturalidad y un enfoque emocional.
+          </p>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <div class="titulo-proyecto">
+          <img src="assets/fotos/raiz.png" alt="Título Proyecto 2" />
+        </div>
+        <div class="galeria">
+          <img src="assets/fotos/raiz1.png" alt="Raíz 1" />
+          <img src="assets/fotos/raiz2.png" alt="Raíz 2" />
+          <img src="assets/fotos/raiz3.png" alt="Raíz 3" />
+        </div>
+        <button class="ver-mas" onclick="toggleInfo('info2')">Ver más</button>
+        <div class="info-oculta" id="info2">
+          <p>
+            un diseño minimalista y colores suaves que inspiran calma. la app
+            integra deporte, nutrición y terapia en un espacio intuitivo y
+            acogedor. más que herramientas prácticas, Raíz crea una conexión
+            emocional, acompañando a los usuarios en su camino hacia el
+            bienestar integral.
+          </p>
+        </div>
+      </div>
+
+      <div class="proyecto">
+        <div class="titulo-proyecto" style="text-align: left">
+          <h2 style="margin-left: 0">feminidad oscura</h2>
+        </div>
+        <div class="galeria" style="justify-content: center">
+          <img src="assets/fotos/foto3.JPG" alt="Cielo 1" />
+          <img src="assets/fotos/foto1.JPG" alt="Cielo 2" />
+          <img src="assets/fotos/foto2.JPG" alt="Cielo 3" />
+        </div>
+        <button class="ver-mas" onclick="toggleInfo('info3')">Ver más</button>
+        <div class="info-oculta" id="info3">
+          <p>
+            una serie de fotografias intensas y enigmáticas que exploran la
+            feminidad desde su lado más oscuro y poderoso. a través de luces
+            tenues, contrastes marcados y miradas profundas, estas fotografías
+            capturan la esencia de una mujer que no teme su sombra: misteriosa,
+            fuerte, sensual y libre,
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

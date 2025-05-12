@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --rosa-claro: #ffcedd;
+  --rosa-hover: #f9b7c4;
+  --gris: #333;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff9f9;
+  color: var(--gris);
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid #ccc;
+  padding: 1rem;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  transform: translateX(-8px);
+}
+
+.menu a {
+  text-decoration: none;
+  color: var(--gris);
+  font-size: 1rem;
+  text-transform: lowercase;
+  font-family: "Open Sans", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: var(--rosa-hover);
+}
+
+.hero {
+  height: 100vh;
+  background: url("assets/fotos/portfolio.png") no-repeat center center/cover;
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: transparent;
+  position: relative;
+}
+
+.presentacion {
+  text-align: center;
+  color: #333;
+  margin-top: 5rem;
+  padding: 0 2rem;
+  opacity: 0;
+  animation: fadeInUp 1.5s 0.5s forwards;
+}
+
+.presentacion h1 {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.presentacion p {
+  font-size: 1.2rem;
+  color: #666;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.areas-de-trabajo {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 5rem 2rem;
+  background-color: #fceef3;
+  opacity: 0;
+  animation: fadeInUp 1.5s 1s forwards;
+  margin-bottom: 4rem;
+}
+
+.area-item {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  width: 25%;
+  transform: scale(0.95);
+  transition: transform 0.3s ease-in-out;
+}
+
+.area-item:hover {
+  transform: scale(1);
+}
+
+.area-item h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.area-item p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.area-item img {
+  width: 80%;
+  max-height: 200px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.area-item:nth-child(1) {
+  animation: fadeInLeft 1.5s 1.5s forwards;
+}
+
+.area-item:nth-child(2) {
+  animation: fadeInUp 1.5s 1.8s forwards;
+}
+
+.area-item:nth-child(3) {
+  animation: fadeInRight 1.5s 2.1s forwards;
+}
+
+.frase-final {
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #888;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  opacity: 0;
+  animation: fadeInUp 1.5s 2.5s forwards;
+}

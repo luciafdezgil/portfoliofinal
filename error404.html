@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error 404 - página no encontrada</title>
+    <link rel="stylesheet" href="404.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="error-container">
+      <h1 class="codigo">404</h1>
+      <p class="mensaje">Página no encontrada</p>
+      <a href="/" class="boton">Volver al inicio</a>
+    </div>
+  </body>
+  <style>
+    :root {
+      --rosa-claro: #fce4ec;
+      --negro: #1a1a1a;
+      --blanco: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--blanco);
+      color: var(--negro);
+      font-family: "Open Sans", sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .error-container {
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .codigo {
+      font-size: 10rem;
+      font-weight: 700;
+      color: var(--negro);
+      letter-spacing: -5px;
+    }
+
+    .mensaje {
+      font-size: 1.5rem;
+      margin: 1rem 0 2rem;
+      color: var(--negro);
+    }
+
+    .boton {
+      background-color: var(--rosa-claro);
+      color: var(--negro);
+      padding: 1rem 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--negro);
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .boton:hover {
+      background-color: var(--negro);
+      color: var(--rosa-claro);
+      border-color: var(--negro);
+    }
+  </style>
+</html>
